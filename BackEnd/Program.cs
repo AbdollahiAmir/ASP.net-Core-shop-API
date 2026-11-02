@@ -24,6 +24,8 @@ builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IIdentitySeeder, IdentitySeeder>();
 builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
+builder.Services.AddScoped<IPublicProductService, PublicProductService>();
+builder.Services.AddScoped<IUsersService, UsersService>();
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
