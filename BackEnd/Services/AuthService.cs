@@ -120,7 +120,7 @@ namespace BackEnd.Services
             };
         }
 
-        public async Task<AuthResult> ChangePasswordAsync(string? userId, ChangePasswordDto dto)
+        public async Task<AuthResult> ChangePasswordAsync(string userId, ChangePasswordDto dto)
         {
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)

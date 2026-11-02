@@ -30,6 +30,10 @@ namespace BackEnd.Data
                 .HasForeignKey(p => p.SellerId)
                 .OnDelete(DeleteBehavior.SetNull);
 
+            builder.Entity<Product>()
+                .Property(p => p.Price)
+                .HasPrecision(18, 2);
+
             // Cart
 
             builder.Entity<Cart>()
