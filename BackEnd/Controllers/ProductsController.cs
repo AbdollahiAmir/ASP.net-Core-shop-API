@@ -11,11 +11,11 @@ namespace BackEnd.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Roles = "Admin,Seller")]
-    public class ProductController : ControllerBase
+    public class ProductsController : ControllerBase
     {
         private readonly IProductService _service;
 
-        public ProductController(IProductService service)
+        public ProductsController(IProductService service)
         {
             _service = service;
         }
