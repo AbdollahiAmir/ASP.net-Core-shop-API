@@ -6,7 +6,8 @@
         UnableToSupply = 1,
         SubmittedToAdmin = 2,
         ConfirmedByAdmin = 3,
-        RejectedByAdmin = 4
+        RejectedByAdmin = 4,
+        OrderClosed = 5
     }
 
     public class OrderSellerFulfillment

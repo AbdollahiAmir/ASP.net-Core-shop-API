@@ -27,6 +27,7 @@ builder.Services.AddScoped<IProductCategoryService, ProductCategoryService>();
 builder.Services.AddScoped<IPublicProductService, PublicProductService>();
 builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderService,  OrderService>();
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
