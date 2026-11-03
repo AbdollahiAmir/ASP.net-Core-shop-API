@@ -1,90 +1,88 @@
-<div dir="rtl">
+<div align="center">
 
-# فروشگاه آنلاین — REST API
+# 🛍️ Online Shop API
 
-یک API بک‌اند برای مدیریت فروشگاه آنلاین چندنقشی که با **ASP.NET Core Web API** و **C#** ساخته شده است. این پروژه امکانات احراز هویت، مدیریت محصولات و دسته‌بندی‌ها، سبد خرید و گردش سفارش‌ها را برای مشتری، فروشنده و مدیر فراهم می‌کند.
+### RESTful backend for a role-based, multi-seller online store
+
+**یک API بک‌اند برای فروشگاه آنلاین چندفروشنده‌ای، با مدیریت نقش‌محور کاربران، محصولات، سبد خرید و سفارش‌ها**
+
+<br />
+
+![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-Web_API-512BD4?logo= dotnet&logoColor=white)
+![C#](https://img.shields.io/badge/Language-C%23-239120?logo=csharp&logoColor=white)
+![SQL Server](https://img.shields.io/badge/Database-SQL_Server-CC2927?logo=microsoftsqlserver&logoColor=white)
+![License](https://img.shields.io/badge/License-Not_specified-lightgrey)
+
+[✨ ویژگی‌ها](#-ویژگیها--features) · [🚀 شروع سریع](#-شروع-سریع--quick-start) · [📚 API](#-مرور-api--api-overview) · [🧱 ساختار](#-ساختار-پروژه--project-structure)
 
 </div>
-
-# Online Shop — REST API
-
-A role-based backend API for an online shop, built with **ASP.NET Core Web API** and **C#**. It provides authentication, product and category management, shopping carts, and order workflows for customers, sellers, and administrators.
 
 ---
 
-## فهرست مطالب | Contents
-
-- [ویژگی‌ها | Features](#ویژگیها--features)
-- [فناوری‌ها | Tech stack](#فناوریها--tech-stack)
-- [پیش‌نیازها | Prerequisites](#پیشنیازها--prerequisites)
-- [راه‌اندازی | Getting started](#راهاندازی--getting-started)
-- [مستندات API | API documentation](#مستندات-api--api-documentation)
-- [مسیرهای اصلی API | Main API routes](#مسیرهای-اصلی-api--main-api-routes)
-- [ساختار پروژه | Project structure](#ساختار-پروژه--project-structure)
-- [امنیت و تنظیمات | Security and configuration](#امنیت-و-تنظیمات--security-and-configuration)
-
-## ویژگی‌ها | Features
+## 🌟 درباره پروژه | About
 
 <div dir="rtl">
 
-- ثبت‌نام، ورود، خروج و تغییر رمز عبور با استفاده از ASP.NET Core Identity و JWT.
-- ذخیرهٔ توکن دسترسی در کوکی `HttpOnly` و پشتیبانی از نقش‌های **Admin**، **Seller** و **Customer**.
-- مدیریت محصولات شامل ایجاد، ویرایش، حذف، بارگذاری تصویر و تأیید محصول توسط مدیر.
-- نمایش عمومی محصولات تأییدشده و دسته‌بندی‌های کالا.
-- مدیریت سبد خرید مشتری و ثبت و پیگیری سفارش.
-- گردش سفارش چندفروشنده‌ای با امکان بررسی و تأیید توسط فروشنده و مدیر.
-- مدیریت کاربران و دسته‌بندی‌ها با دسترسی‌های مبتنی بر نقش.
-- ذخیره‌سازی داده‌ها با SQL Server و Entity Framework Core؛ مستندات OpenAPI و رابط Scalar در محیط توسعه.
+**Online Shop API** یک سرویس RESTful برای هستهٔ بک‌اند فروشگاه آنلاین است که با ASP.NET Core 10 ساخته شده. ساختار نقش‌محور آن سه گروه مدیر، فروشنده و مشتری را پشتیبانی می‌کند و فرایندهای اصلی فروشگاه را از مدیریت کالا تا ثبت و بررسی سفارش پوشش می‌دهد.
 
 </div>
 
-- Registration, login, logout, and password changes using ASP.NET Core Identity and JWT.
-- `HttpOnly` access-token cookie and **Admin**, **Seller**, and **Customer** roles.
-- Product creation, editing, deletion, image upload, and administrator approval.
-- Public access to approved products and product categories.
-- Customer shopping carts, order placement, and order tracking.
-- Multi-seller order workflows with seller and administrator review and approval.
-- Role-protected user and category management.
-- SQL Server persistence via Entity Framework Core; OpenAPI documentation and Scalar UI in development.
+**Online Shop API** is a RESTful backend for an online store, built with ASP.NET Core 10. Its role-based design supports administrators, sellers, and customers, covering core commerce workflows from catalog management to order placement and review.
 
-## فناوری‌ها | Tech stack
+## ✨ ویژگی‌ها | Features
 
-- C# / .NET 10 (`net10.0`)
-- ASP.NET Core Web API
-- Entity Framework Core 10 و SQL Server
-- ASP.NET Core Identity و JWT Bearer Authentication
-- OpenAPI و Scalar
+| فارسی | English |
+|---|---|
+| 🔐 ثبت‌نام، ورود، خروج و تغییر رمز عبور با ASP.NET Core Identity و JWT | 🔐 Registration, login, logout, and password changes with ASP.NET Core Identity and JWT |
+| 👥 دسترسی مبتنی بر نقش‌های **Admin**، **Seller** و **Customer** | 👥 Role-based access for **Admin**, **Seller**, and **Customer** |
+| 📦 مدیریت محصولات، بارگذاری تصویر و تأیید محصول توسط مدیر | 📦 Product management, image uploads, and admin approval |
+| 🗂️ مشاهده و مدیریت دسته‌بندی‌های محصولات | 🗂️ Browse and manage product categories |
+| 🛒 سبد خرید و ثبت و پیگیری سفارش مشتری | 🛒 Customer carts, order placement, and tracking |
+| 🤝 گردش سفارش چندفروشنده‌ای با بررسی فروشنده و مدیر | 🤝 Multi-seller order workflow with seller and admin review |
+| 🗄️ ذخیره‌سازی با SQL Server و Entity Framework Core | 🗄️ SQL Server persistence with Entity Framework Core |
+| 📖 مستندات OpenAPI و رابط Scalar در محیط توسعه | 📖 OpenAPI documentation and Scalar UI in Development |
 
-## پیش‌نیازها | Prerequisites
+## 🧰 فناوری‌ها | Tech stack
+
+- **C# / .NET 10** — `net10.0`
+- **ASP.NET Core Web API**
+- **Entity Framework Core 10** و **SQL Server**
+- **ASP.NET Core Identity** و **JWT Bearer**
+- **OpenAPI** و **Scalar.AspNetCore**
+
+## 🚀 شروع سریع | Quick start
+
+### پیش‌نیازها | Prerequisites
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - SQL Server یا SQL Server LocalDB
-- ابزار EF Core CLI برای اجرای migrationها:
+- ابزار EF Core CLI (`dotnet-ef`)
+
+نصب ابزار EF Core در صورت نیاز:
+
+Install the EF Core CLI if needed:
 
 ```bash
 dotnet tool install --global dotnet-ef
 ```
 
-در صورت نصب بودن ابزار، نسخهٔ آن را بررسی/به‌روزرسانی کنید:
-
-```bash
-dotnet tool update --global dotnet-ef
-```
-
-## راه‌اندازی | Getting started
-
-### ۱. دریافت پروژه | Clone the repository
+### ۱. کلون و ورود به پوشه | Clone the repository
 
 ```bash
 git clone https://github.com/AbdollahiAmir/ASP.net-Core-shop-API.git
 cd ASP.net-Core-shop-API
 ```
 
-### ۲. تنظیم مقادیر محرمانه | Configure secrets
+### ۲. تنظیم اسرار محلی | Configure local secrets
 
-برنامه هنگام اجرا نقش‌ها و حساب مدیر اولیه را ایجاد می‌کند؛ بنابراین نام کاربری و رمز عبور مدیر باید تنظیم شده باشند. همچنین کلید امضای JWT باید در تنظیمات قرار گیرد. مقادیر زیر را با User Secrets (مناسب توسعهٔ محلی) تنظیم کنید:
+<div dir="rtl">
 
-The application seeds the roles and initial administrator account at startup, so the administrator credentials must be configured. A JWT signing key is also required. Set these values with User Secrets (recommended for local development):
+برنامه در زمان اجرا نقش‌ها و حساب مدیر اولیه را Seed می‌کند. برای شروع، کلید JWT و مشخصات مدیر را با User Secrets تنظیم کنید. این اطلاعات محرمانه را در Git یا فایل‌های تنظیمات commit نکنید.
+
+</div>
+
+At startup, the app seeds the roles and initial administrator account. Configure the JWT signing key and admin credentials with User Secrets. Do not commit secrets to Git or configuration files.
 
 ```bash
 dotnet user-secrets set "Jwt:Key" "replace-with-a-long-random-secret-key" --project BackEnd
@@ -92,68 +90,66 @@ dotnet user-secrets set "Seed:AdminUserName" "admin" --project BackEnd
 dotnet user-secrets set "Seed:AdminPassword" "replace-with-a-strong-password" --project BackEnd
 ```
 
-رمز عبور باید الزامات Identity را رعایت کند: حداقل ۸ نویسه و شامل حرف کوچک، حرف بزرگ، عدد و نویسهٔ غیرحرفی. برای محیط غیرتوسعه، از Secret Manager یا راهکار امن مدیریت اسرار محیط استقرار استفاده کنید؛ اسرار را در مخزن یا فایل‌های تنظیمات commit نکنید.
+رمز مدیر باید حداقل ۸ نویسه و شامل حرف کوچک، حرف بزرگ، عدد و نویسهٔ غیرحرفی باشد.
 
-The password must satisfy the configured Identity policy: at least 8 characters, including lowercase and uppercase letters, a digit, and a non-alphanumeric character. In deployed environments, use a secure secret-management mechanism. Never commit secrets to the repository or configuration files.
+The admin password must be at least 8 characters and contain lowercase and uppercase letters, a digit, and a non-alphanumeric character.
 
-### ۳. تنظیم اتصال پایگاه‌داده | Configure the database connection
+### ۳. اتصال پایگاه‌داده | Configure the database
 
-مقدار پیش‌فرض `DefaultConnection` در `BackEnd/appsettings.json` از **SQL Server LocalDB** استفاده می‌کند. اگر از SQL Server دیگری استفاده می‌کنید، مقدار `ConnectionStrings:DefaultConnection` را با User Secrets تنظیم کنید:
+اتصال پیش‌فرض در `BackEnd/appsettings.json` از SQL Server LocalDB استفاده می‌کند. برای اتصال به SQL Server دیگر، مقدار اتصال را با User Secrets جایگزین کنید:
 
-The default `DefaultConnection` in `BackEnd/appsettings.json` uses **SQL Server LocalDB**. If you use another SQL Server instance, override `ConnectionStrings:DefaultConnection` with User Secrets:
+The default connection in `BackEnd/appsettings.json` targets SQL Server LocalDB. To use a different SQL Server, override it with User Secrets:
 
 ```bash
 dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=YOUR_SERVER;Database=ShopDb;User Id=YOUR_USER;Password=YOUR_PASSWORD;TrustServerCertificate=True" --project BackEnd
 ```
 
-رشتهٔ اتصال را متناسب با روش احراز هویت و محیط SQL Server خود تنظیم کنید. اگر از LocalDB پیش‌فرض استفاده می‌کنید، این مرحله لازم نیست.
+رشتهٔ اتصال را با روش احراز هویت و تنظیمات محیط خود هماهنگ کنید. برای LocalDB پیش‌فرض این مرحله لازم نیست.
 
-Adjust the connection string for your SQL Server and authentication setup. This step is unnecessary when using the default LocalDB connection.
+Adjust the connection string to match your SQL Server authentication and environment. Skip this step when using the default LocalDB setup.
 
-### ۴. اعمال migration و اجرای برنامه | Apply migrations and run
+### ۴. اعمال Migration و اجرا | Apply migrations and run
 
 ```bash
 dotnet ef database update --project BackEnd --startup-project BackEnd
 dotnet run --project BackEnd --launch-profile https
 ```
 
-سرور توسعه با تنظیمات فعلی روی `https://localhost:7011` و `http://localhost:5267` اجرا می‌شود. برای ورود و کار با کوکی امن، از HTTPS استفاده کنید.
+در تنظیمات فعلی، برنامه روی `https://localhost:7011` و `http://localhost:5267` اجرا می‌شود. برای ورود و استفاده از کوکی امن، HTTPS را به‌کار ببرید.
 
-With the current launch settings, the development server listens on `https://localhost:7011` and `http://localhost:5267`. Use HTTPS for sign-in and secure-cookie behavior.
+With the current launch settings, the app runs at `https://localhost:7011` and `http://localhost:5267`. Use HTTPS for sign-in and secure-cookie behavior.
 
-## مستندات API | API documentation
+## 📚 مستندات API | API documentation
 
-در محیط توسعه، مستندات OpenAPI و رابط Scalar فعال هستند. پس از اجرای برنامه، رابط Scalar را در مسیر زیر باز کنید:
+در محیط **Development**، مستندات OpenAPI و رابط Scalar فعال هستند:
 
-In the Development environment, OpenAPI and Scalar are enabled. Once the application is running, open the Scalar UI at:
+OpenAPI and Scalar are enabled in the **Development** environment:
 
-```text
-https://localhost:7011/scalar/v1
-```
+**Scalar UI:** [`https://localhost:7011/scalar/v1`](https://localhost:7011/scalar/v1)
 
-## مسیرهای اصلی API | Main API routes
+## 🧭 مرور API | API overview
 
-تمام مسیرها با پیشوند `/api` ارائه می‌شوند. مسیرهای محافظت‌شده به احراز هویت نیاز دارند و بعضی از آن‌ها فقط برای نقش مشخصی در دسترس هستند.
+تمام endpointها زیر پیشوند `/api` قرار دارند. مسیرهای محافظت‌شده به احراز هویت نیاز دارند و بر اساس نقش محدود شده‌اند.
 
-All routes use the `/api` prefix. Protected routes require authentication, and some are restricted to specific roles.
+All endpoints are under the `/api` prefix. Protected routes require authentication and may be restricted by role.
 
-| Controller | مسیرها و کاربرد | Routes and purpose |
+| Controller | Endpointهای منتخب | دسترسی معمول |
 |---|---|---|
-| `Auth` | `POST /api/Auth/register`, `POST /api/Auth/login`, `POST /api/Auth/logout`, `GET /api/Auth/me`, `POST /api/Auth/change-password` | ثبت‌نام، ورود/خروج، اطلاعات کاربر و تغییر رمز عبور / Registration, sign-in/out, current user, password change |
-| `PublicProducts` | `GET /api/PublicProducts/products`, `GET /api/PublicProducts/products/{id}/image` | محصولات تأییدشده و تصویر آن‌ها / Approved products and images |
-| `Products` | `GET/POST /api/Products`, `GET/PATCH/DELETE /api/Products/{id}`, `PATCH /api/Products/{id}/approval` | مدیریت محصولات و تأیید مدیر / Product management and administrator approval |
-| `ProductCategories` | `GET/POST /api/ProductCategories`, `GET/PATCH/DELETE /api/ProductCategories/{id}` | مشاهده و مدیریت دسته‌بندی‌ها / Browse and manage categories |
-| `Cart` | `GET /api/Cart`, `POST /api/Cart/items`, `PATCH/DELETE /api/Cart/items/{productId}` | عملیات سبد خرید مشتری / Customer cart operations |
-| `Orders` | `POST /api/Orders`, `GET /api/Orders`, `GET /api/Orders/{id}`, `PATCH /api/Orders/{id}/cancel` | ثبت، مشاهده و لغو سفارش مشتری / Customer order placement, listing, and cancellation |
-| `SellerOrders` | `GET /api/SellerOrders`, `GET /api/SellerOrders/{orderId}`, `PATCH /api/SellerOrders/{orderId}/fulfillment` | سفارش‌ها و وضعیت انجام سفارش توسط فروشنده / Seller orders and fulfillment |
-| `AdminOrders` | `GET /api/AdminOrders`, `GET /api/AdminOrders/{id}`, مسیرهای تصمیم‌گیری و تأیید سفارش | مدیریت و بررسی سفارش‌ها توسط مدیر / Administrator order management and review |
-| `Users` | `/api/Users` | مدیریت کاربران با دسترسی مدیر / Administrator user management |
+| `Auth` | `POST /api/Auth/register`, `POST /api/Auth/login`, `POST /api/Auth/logout`, `GET /api/Auth/me`, `POST /api/Auth/change-password` | عمومی / کاربر واردشده · Public / authenticated |
+| `PublicProducts` | `GET /api/PublicProducts/products`, `GET /api/PublicProducts/products/{id}/image` | عمومی · Public |
+| `Products` | `GET/POST /api/Products`, `GET/PATCH/DELETE /api/Products/{id}`, `PATCH /api/Products/{id}/approval` | مدیر و فروشنده؛ تأیید فقط مدیر · Admin and Seller; approval is Admin-only |
+| `ProductCategories` | `GET /api/ProductCategories`, `POST /api/ProductCategories`, `PATCH/DELETE /api/ProductCategories/{id}` | خواندن عمومی؛ مدیریت مدیر · Public read; Admin management |
+| `Cart` | `GET /api/Cart`, `POST /api/Cart/items`, `PATCH/DELETE /api/Cart/items/{productId}` | مشتری · Customer |
+| `Orders` | `POST /api/Orders`, `GET /api/Orders`, `GET /api/Orders/{id}`, `PATCH /api/Orders/{id}/cancel` | مشتری · Customer |
+| `SellerOrders` | `GET /api/SellerOrders`, `GET /api/SellerOrders/{orderId}`, `PATCH /api/SellerOrders/{orderId}/fulfillment` | فروشنده و مدیر · Seller and Admin |
+| `AdminOrders` | `GET /api/AdminOrders`, `GET /api/AdminOrders/{id}`, مسیرهای تصمیم‌گیری و تأیید سفارش | مدیر · Admin |
+| `Users` | `GET /api/Users`, `GET/PATCH/DELETE /api/Users/{id}` | مدیر · Admin |
 
-برای جزئیات پارامترها و مدل‌های درخواست/پاسخ، مرجع OpenAPI را در محیط توسعه بررسی کنید.
+برای فهرست کامل endpointها، پارامترها و مدل‌های درخواست/پاسخ، Scalar یا مستندات OpenAPI را در محیط توسعه ببینید.
 
-For request/response schemas and complete endpoint details, consult the OpenAPI reference in Development.
+For the complete endpoint list, parameters, and request/response schemas, use Scalar or the OpenAPI document in Development.
 
-## ساختار پروژه | Project structure
+## 🧱 ساختار پروژه | Project structure
 
 ```text
 .
@@ -161,36 +157,44 @@ For request/response schemas and complete endpoint details, consult the OpenAPI 
 ├── BackEnd/
 │   ├── Controllers/   # API endpoints
 │   ├── DTOs/          # Request and response models
-│   ├── Data/          # EF Core DbContext and roles
-│   ├── Migrations/    # EF Core database migrations
+│   ├── Data/          # DbContext and roles
+│   ├── Migrations/    # EF Core migrations
 │   ├── Models/        # Domain and identity models
 │   ├── IServices/     # Service abstractions
 │   ├── Services/      # Business logic
-│   ├── Program.cs     # Dependency injection and middleware setup
+│   ├── Program.cs     # App configuration and middleware
 │   └── appsettings*.json
 └── README.md
 ```
 
-## امنیت و تنظیمات | Security and configuration
+## 🔒 امنیت و نکات استقرار | Security & deployment
 
-- کلید JWT و اعتبارنامهٔ مدیر را خارج از Git نگه دارید و برای محیط تولید از مقادیر امن و منحصربه‌فرد استفاده کنید.
-- API از کوکی `HttpOnly` با `Secure` و `SameSite=None` برای توکن استفاده می‌کند؛ در استقرار، HTTPS و تنظیمات مناسب دامنه/CORS را در نظر بگیرید.
-- رمز عبور مدیر اولیه در اولین راه‌اندازی استفاده می‌شود؛ حساب و نقش‌های اولیه توسط seeder برنامه ایجاد می‌شوند.
-- **این پروژه در وضعیت فعلی migration اولیه دارد؛ پیش از استفادهٔ عملیاتی، تنظیمات، سیاست‌های دسترسی و سناریوهای امنیتی را متناسب با نیاز استقرار بررسی کنید.**
+- کلید JWT و اطلاعات ورود مدیر را خارج از مخزن و در یک Secret Manager امن نگه دارید.
+- توکن در کوکی `HttpOnly`, `Secure`, `SameSite=None` نگهداری می‌شود؛ استقرار را با HTTPS انجام دهید و CORS/دامنه‌ها را متناسب با کلاینت تنظیم کنید.
+- نقش‌ها و حساب مدیر از طریق seeder برنا��ه ساخته می‌شوند؛ مقادیر Seed باید پیش از اجرا تنظیم شده باشند.
+- پروژه در حال حاضر Migration اولیه دارد؛ پیش از استقرار عملیاتی، پیکربندی، دسترسی‌ها و نیازمندی‌های امنیتی را بررسی کنید.
 
-- Keep the JWT signing key and administrator credentials out of Git; use unique, securely managed values in production.
-- The API stores the token in an `HttpOnly`, `Secure`, `SameSite=None` cookie. Use HTTPS and configure deployment domains/CORS appropriately.
-- The initial administrator account and roles are created by the application seeder at startup.
-- **The repository currently includes an initial database migration. Review deployment settings, authorization policies, and security requirements before production use.**
+- Keep the JWT signing key and administrator credentials in a secure secret manager, outside the repository.
+- The token is stored in an `HttpOnly`, `Secure`, `SameSite=None` cookie. Deploy over HTTPS and configure CORS and allowed domains for your client.
+- Roles and the initial admin are created by the application seeder; configure the Seed values before startup.
+- The repository currently contains an initial migration. Review configuration, authorization, and security requirements before production deployment.
 
-## مشارکت | Contributing
+## 🤝 مشارکت | Contributing
 
-از پیشنهادها و مشارکت‌ها استقبال می‌شود. برای تغییرات بزرگ، ابتدا یک Issue ایجاد کنید تا دربارهٔ راهکار هماهنگ شویم.
+از مشارکت استقبال می‌شود! برای تغییرات بزرگ، لطفاً ابتدا یک Issue ایجاد کنید تا دربارهٔ راهکار پیشنهادی هماهنگ شویم.
 
-Contributions and suggestions are welcome. For significant changes, please open an Issue first to discuss the proposed approach.
+Contributions are welcome! For substantial changes, please open an Issue first to discuss the proposed approach.
 
-## مجوز | License
+## 📄 مجوز | License
 
-در حال حاضر فایل مجوزی در مخزن تعریف نشده است. پیش از استفاده یا توزیع مجدد، مجوز مناسب پروژه را مشخص کنید.
+در حال حاضر فایل License در مخزن وجود ندارد. پیش از استفاده یا بازتوزیع، مجوز پروژه را مشخص کنید.
 
-No license file is currently defined in the repository. Add an appropriate license before distributing or reusing the project.
+There is currently no license file in the repository. Add a license before using or redistributing the project.
+
+---
+
+<div align="center">
+
+**Built with ASP.NET Core · ساخته‌شده با ASP.NET Core**
+
+</div>
