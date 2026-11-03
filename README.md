@@ -9,7 +9,7 @@
 <br />
 
 ![.NET 10](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-Web_API-512BD4?logo= dotnet&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-Web_API-512BD4?logo=dotnet&logoColor=white)
 ![C#](https://img.shields.io/badge/Language-C%23-239120?logo=csharp&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/Database-SQL_Server-CC2927?logo=microsoftsqlserver&logoColor=white)
 ![License](https://img.shields.io/badge/License-Not_specified-lightgrey)
